@@ -1,0 +1,26 @@
+
+<div class="container" style="background-color: #ffcccc; margin-top: 20px;">
+    <nav class="navbar navbar-light bg-light">
+        <form class="container-fluid justify-content-start">
+            <h1>
+                Freelancer Contact Directory
+            </h1>
+
+            <div class="row">
+                <div class="col-sm-10">
+                    <input type="text" name="" id="" class="form-control"[(ngModel)]="searchName" name="searchName">
+                </div>
+                <div class="col">
+                    <button class="btn" (click)="search()" style="background-color: #ff9999;">Search</button>
+                </div>
+            </div>
+            <div class="col">
+                <a routerLink="/freelancer/add"><button class="btn" style="background-color: #ff9999; margin-top: 25px;" type="button">Add New Freelancer</button></a>
+                
+            </div>
+        </form>
+    </nav>
+</div>
+
+<app-freelancer-list></app-freelancer-list>
+<router-outlet></router-outlet>

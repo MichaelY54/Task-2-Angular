@@ -1,0 +1,25 @@
+<div *ngFor="let freelancer of freelancers">
+  <div class="col-md-4" style="margin-top: 2%;">
+    <div class="card p-3 mb-2">
+      <div class="d-flex justify-content-between">
+        <div class="d-flex flex-row align-items-center" style="text-align: center;">
+          <img src="../assets/profile.png" alt="" style="border-radius: 50%;width: 25%; height: 25%; margin-top: 5%;">
+          <div class="ms-2 c-details">
+            <h1>{{freelancer.name}}</h1>
+            <hr>
+          </div>
+          <div class="ms-2 c-details" style="text-align: left; padding-left: 5%; padding-right: 5%;">
+            <h4>Skill: {{freelancer.skill}}</h4>
+            <h4>Phone: {{freelancer.phone}}</h4>
+            <h5 class="overflow">Note: {{freelancer.notes}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5">
+        <a routerLink="/freelancer-detail/{{freelancer.id}}/view"><button class="btn btn-primary" style="width: 33.3%;background-color: #5c9aff;">Detail</button></a>
+        <a routerLink="/freelancer-detail/{{freelancer.id}}/update"><button class="btn btn-primary" style="width: 33.3%;background-color: #5c9aff;">Update</button></a>
+        <button (click)="deleteFreelancer(freelancer.id)" class="btn btn-primary" style="width: 33.3%;background-color: #5c9aff;">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

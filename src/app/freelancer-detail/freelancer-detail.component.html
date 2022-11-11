@@ -1,0 +1,28 @@
+<div class="" style="background-color: #ffe6b3; margin-top: 20px;" *ngIf="freelancer!=undefined; else second">
+    <div class="formrow" style="text-align: center;">
+      <form action="">
+        <h1>Contact Detail</h1>
+        <br>
+        <br>
+        <h2 for="fName">Freelancer Name: </h2>
+        <input type="text" name="fName" id="fName" class="form-control" value="{{freelancer.name}}" [disabled]="disableBtn" [(ngModel)]="freelancer.name" #name="ngModel">
+        <h2 for="fPhone">Freelancer Phone: </h2>
+        <input type="text" name="fPhone" id="fPhone" class="form-control" value="{{freelancer.phone}}" [disabled]="disableBtn" [(ngModel)]="freelancer.phone" #phone="ngModel">
+        <h2 for="fSkill">Freelancer Skill: </h2>
+        <input type="text" name="fSkill" id="fSkill" class="form-control" value="{{freelancer.skill}}" [disabled]="disableBtn" [(ngModel)]="freelancer.skill" #skill="ngModel">
+        <h2 for="fNote">Freelancer Note: </h2>
+        <input type="text" name="fNote" id="fNote" class="form-control" value="{{freelancer.notes}}" [disabled]="disableBtn" [(ngModel)]="freelancer.notes" #notes="ngModel">
+  
+        <div style="margin-top: 50px;" *ngIf="action=='view'">
+          <button class="btn btn-primary" (click)="goBack()">Back</button>
+        </div>
+
+        <div style="margin-top: 50px;" *ngIf="action=='update' || action=='add'">
+          <button class="btn btn-primary" style="margin-right: 50px;" (click)="submitData()">Submit</button>
+          <button class="btn btn-primary" (click)="goBack()">Back</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <ng-template #second>Data kosong</ng-template>
